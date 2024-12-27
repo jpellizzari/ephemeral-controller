@@ -1,0 +1,23 @@
+# permissions for end users to view ephemeralapplicationsets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: ephemeral-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: ephemeralapplicationset-viewer-role
+rules:
+- apiGroups:
+  - ephemeralapps.toolkit.hinge.com
+  resources:
+  - ephemeralapplicationsets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ephemeralapps.toolkit.hinge.com
+  resources:
+  - ephemeralapplicationsets/status
+  verbs:
+  - get

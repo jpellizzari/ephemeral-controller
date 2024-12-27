@@ -1,0 +1,9 @@
+apiVersion: ephemeralapps.toolkit.hinge.com/v1alpha1
+kind: EphemeralApplicationSet
+metadata:
+  labels:
+    app.kubernetes.io/name: ephemeral-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: ephemeralapplicationset-sample
+spec:
+  # TODO(user): Add fields here

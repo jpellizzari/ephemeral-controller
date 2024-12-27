@@ -1,0 +1,27 @@
+# permissions for end users to edit ephemeralapplicationsets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: ephemeral-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: ephemeralapplicationset-editor-role
+rules:
+- apiGroups:
+  - ephemeralapps.toolkit.hinge.com
+  resources:
+  - ephemeralapplicationsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ephemeralapps.toolkit.hinge.com
+  resources:
+  - ephemeralapplicationsets/status
+  verbs:
+  - get
